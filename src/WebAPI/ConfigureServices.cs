@@ -2,7 +2,7 @@
 using MapsterMapper;
 using System.Reflection;
 
-namespace WebAPI;
+namespace Pilot.WebAPI;
 
 public static class ConfigureServices
 {

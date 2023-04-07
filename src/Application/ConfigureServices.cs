@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application;
+namespace Pilot.Application;
 
 public static class ConfigureServices
 {

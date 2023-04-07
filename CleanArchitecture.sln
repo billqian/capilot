@@ -15,17 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src_shared", "src_shared", "{E8C879AE-BE74-4AD0-AFA4-584617879B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Shared", "src_shared\Domain.Shared\Domain.Shared.csproj", "{7934E668-D496-4CA6-B234-5B36799BFE9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Shared", "src_shared\Domain.Shared\Domain.Shared.csproj", "{7934E668-D496-4CA6-B234-5B36799BFE9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{DAD438F1-68A5-47D4-9EBB-6EC70F30D7B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{DAD438F1-68A5-47D4-9EBB-6EC70F30D7B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{5E28584F-A83F-40CE-896D-245F3C00D654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{5E28584F-A83F-40CE-896D-245F3C00D654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{43832556-73A0-4244-8E70-EC09C1E45A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{43832556-73A0-4244-8E70-EC09C1E45A43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Shared", "src_shared\Application.Shared\Application.Shared.csproj", "{C5897822-C742-49A6-858A-5A86759D8114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Shared", "src_shared\Application.Shared\Application.Shared.csproj", "{C5897822-C742-49A6-858A-5A86759D8114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{3CEB9AD7-C09B-417D-949B-25E3C5441046}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{3CEB9AD7-C09B-417D-949B-25E3C5441046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Shared", "src_shared\Infrastructure.Shared\Infrastructure.Shared.csproj", "{F2F98112-3B94-4257-AE68-77C17E6A974D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{3CEB9AD7-C09B-417D-949B-25E3C5441046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CEB9AD7-C09B-417D-949B-25E3C5441046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CEB9AD7-C09B-417D-949B-25E3C5441046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F98112-3B94-4257-AE68-77C17E6A974D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F98112-3B94-4257-AE68-77C17E6A974D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F98112-3B94-4257-AE68-77C17E6A974D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F98112-3B94-4257-AE68-77C17E6A974D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{43832556-73A0-4244-8E70-EC09C1E45A43} = {0CAD54B5-C709-4D42-91F2-EC380D132DD3}
 		{C5897822-C742-49A6-858A-5A86759D8114} = {E8C879AE-BE74-4AD0-AFA4-584617879B8A}
 		{3CEB9AD7-C09B-417D-949B-25E3C5441046} = {0CAD54B5-C709-4D42-91F2-EC380D132DD3}
+		{F2F98112-3B94-4257-AE68-77C17E6A974D} = {E8C879AE-BE74-4AD0-AFA4-584617879B8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99A34184-23FC-470B-BED9-62B13A06EB2B}

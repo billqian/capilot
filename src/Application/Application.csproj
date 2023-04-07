@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <RootNamespace>Pilot.Application</RootNamespace>
+	  <AssemblyName>Pilot.Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

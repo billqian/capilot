@@ -4,12 +4,10 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>Pilot.Domain</RootNamespace>
-	  <AssemblyName>Pilot.Domain</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src_shared\Domain.Shared\Domain.Shared.csproj" />
+    <ProjectReference Include="..\Application.Shared\Application.Shared.csproj" />
   </ItemGroup>
 
 </Project>

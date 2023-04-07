@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure;
+namespace Pilot.Infrastructure;
 
 public static class ConfigureServices
 {
