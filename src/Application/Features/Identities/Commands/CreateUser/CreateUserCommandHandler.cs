@@ -1,15 +1,16 @@
 ﻿using Application.Shared.Services;
+using Pilot.Application.Services;
 using Pilot.Domain.Identities;
 
 namespace Pilot.Application.Features.Identities.Commands.CreateUser;
 
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
 {
-    private readonly IRepository<User> _repository;
+    private readonly IApplicationDbContext _context;
 
-    public CreateUserCommandHandler(IRepository<User> repository)
+    public CreateUserCommandHandler(IApplicationDbContext context)
     {
-        _repository = repository;
+        _context = context;
     }
 
     public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -21,10 +22,12 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
             IsSuperAdmin = request.isSuper
         };
 
-        user.AddDomainEvent(new UserCreatedEvent(user));
+        
 
-        await _repository.InsertAsync(user);
-        await _repository.UnitOfWork.SaveChangesAsync(cancellationToken);
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        user.AddDomainEvent(new UserCreatedEvent(user));
 
         return user.Id;
     }

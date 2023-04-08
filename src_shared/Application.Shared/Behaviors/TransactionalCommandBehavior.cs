@@ -19,17 +19,23 @@ public class TransactionalCommandBehavior<TRequest, TResponse> : IPipelineBehavi
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         if (request is ITransactionalCommand) {
-            try {
-                _unitOfWork.BeginTrans();
-                //Console.WriteLine("事务启动");
-                var response = await next();
-                _unitOfWork.Commit();
-                //Console.WriteLine("事务提交");
-                return response;
-            } catch {
-                //Console.WriteLine("事务回滚");
-                _unitOfWork.Rollback();
-                throw;
+            
+            var existTrans = _unitOfWork.ExistTransaction;
+            if (existTrans) {
+                return await next();
+            } else { //没有事务环境，则创建
+                try {
+                    _unitOfWork.BeginTransaction();
+                    //Console.WriteLine("事务启动");
+                    var response = await next();
+                    _unitOfWork.CommitTransaction();
+                    //Console.WriteLine("事务提交");
+                    return response;
+                } catch {
+                    //Console.WriteLine("事务回滚");
+                    _unitOfWork.RollbackTransaction();
+                    throw;
+                }
             }
         } else {
             return await next();

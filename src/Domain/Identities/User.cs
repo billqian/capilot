@@ -2,6 +2,8 @@
 
 public class User : BaseEntity
 {
+    public Guid Id { get; set; } = Guid.NewGuid();
+
     public string LoginName { get; set; } = default!;
 
     public string Description { get; set; } = default!;

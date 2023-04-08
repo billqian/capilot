@@ -2,10 +2,11 @@
 
 public interface IUnitOfWork
 {
-    void BeginTrans();
-    void Commit();
-    void Rollback();
+    void BeginTransaction();
+    
+    void CommitTransaction();
 
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    void RollbackTransaction();
 
+    bool ExistTransaction { get; }
 }

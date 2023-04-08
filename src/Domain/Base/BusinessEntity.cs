@@ -8,6 +8,7 @@ namespace Pilot.Domain.Base;
 
 public class BusinessEntity : BaseEntity
 {
+    public Guid Id { get; set; } = Guid.NewGuid();
     public string Code { get; set; } = default!;
 
     public DateTime? CreateTime { get; set; } = DateTime.Now;
