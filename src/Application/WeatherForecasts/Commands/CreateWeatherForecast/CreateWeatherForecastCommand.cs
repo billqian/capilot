@@ -1,6 +1,7 @@
-﻿namespace Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
+﻿using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
 
-public record CreateWeatherForecastCommand(
-    DateOnly Date, 
-    int TemperatureC, 
-    string? Summary = "") : IRequest<Guid>;
+namespace Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
+
+public record CreateWeatherForecastCommand(DateOnly Date, int TemperatureC, string? Summary)
+    : CreateWeatherForecastCommandData(Date, TemperatureC, Summary),
+    IRequest<Guid>;

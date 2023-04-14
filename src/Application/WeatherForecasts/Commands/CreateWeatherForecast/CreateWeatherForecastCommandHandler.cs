@@ -7,19 +7,17 @@ internal class CreateWeatherForecastCommandHandler : IRequestHandler<CreateWeath
 {
 
     private readonly IApplicationDbContext _context;
+    private readonly IMapper _mapper;
 
-    public CreateWeatherForecastCommandHandler(IApplicationDbContext context)
+    public CreateWeatherForecastCommandHandler(IApplicationDbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     public async Task<Guid> Handle(CreateWeatherForecastCommand request, CancellationToken cancellationToken)
     {
-        var forecastItem = new WeatherForecast() {
-            Date = request.Date,
-            Summary = request.Summary,
-            TemperatureC = request.TemperatureC
-        };
+        var forecastItem = _mapper.Map<WeatherForecast>(request);
 
         await _context.WeatherForecasts.AddAsync(forecastItem);
 

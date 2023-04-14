@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-@using Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
+@using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -38,12 +38,12 @@ else
 }
 
 @code {
-    private IEnumerable<GetAllItemQueryResponseItem> forecasts;
+    private IEnumerable<GetAllItemQueryResponseItem>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         var data = await Http.GetFromJsonAsync<GetAllItemQueryResponse>("api/WeatherForecast");
-        forecasts = data.Items;
+        forecasts = data!.Items;
     }
 
     
