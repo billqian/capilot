@@ -25,8 +25,16 @@ builder.Host.UseSerilog((context, configuration) => {
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+
+    var docPrefix = "api";
+    app.UseSwagger(option => {
+        option.RouteTemplate = $"{docPrefix}/" + "{documentName}/swagger.json";
+
+    });
+    app.UseSwaggerUI(option => {
+        option.SwaggerEndpoint($"/{docPrefix}/v1/swagger.json", "API");
+        option.RoutePrefix = docPrefix;
+    });
 
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
