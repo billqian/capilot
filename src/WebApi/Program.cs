@@ -12,6 +12,7 @@ builder.Services.AddInfrastructureServices(config);
 builder.Services.AddPesistenceServices(config);
 builder.Services.AddWebApiServices(config);
 
+builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -37,8 +38,15 @@ if (app.Environment.IsDevelopment()) {
         await initialiser.SeedAsync();
     }
 }
-
 app.UseSerilogRequestLogging();
+
+app.UseBlazorFrameworkFiles();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapRazorPages();
+app.MapFallbackToFile("index.html");
 
 app.UseAuthorization();
 

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <AssemblyName>Syntop.Pilot.Application.RequestModels</AssemblyName>
+	  <RootNamespace>Syntop.Pilot.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Application\WeatherForecasts\Commands\CreateWeatherForecast\CreateWeatherForecastCommand.cs" Link="WeatherForecasts\Commands\CreateWeatherForecast\CreateWeatherForecastCommand.cs" />
+    <Compile Include="..\Application\WeatherForecasts\Queries\GetAll\GetAllItemsQuery.cs" Link="WeatherForecasts\Queries\GetAllItemsQuery.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WeatherForecasts\Commands\CreateWeatherForecast\" />
+    <Folder Include="WeatherForecasts\Queries\" />
+  </ItemGroup>
+
+</Project>

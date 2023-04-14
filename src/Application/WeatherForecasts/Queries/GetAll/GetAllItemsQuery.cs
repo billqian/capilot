@@ -1,11 +1,4 @@
-﻿using Syntop.Pilot.Domain.Demo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
+﻿namespace Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
 
 public record GetAllItemsQuery() : IRequest<GetAllItemQueryResponse>;
 

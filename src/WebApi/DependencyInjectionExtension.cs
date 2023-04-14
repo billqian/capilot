@@ -6,6 +6,7 @@ public static class DependencyInjectionExtension
         this IServiceCollection services, 
         IConfiguration config)
     {
+        services.AddHttpContextAccessor();
         return services;
     }
 }
