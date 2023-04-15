@@ -14,8 +14,6 @@ public static class DependencyInjectionExtension
                 options.UseNpgsql(config.GetConnectionString("DefaultConnection"),
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-        services.AddScoped<IUnitOfWork>(
-            sp => sp.GetRequiredService<ApplicationDbContext>());
         services.AddScoped<IApplicationDbContext>(
             sp => sp.GetRequiredService<ApplicationDbContext>());
 

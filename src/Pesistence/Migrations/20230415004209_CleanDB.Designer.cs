@@ -12,7 +12,7 @@ using Syntop.Pilot.Pesistence;
 namespace Syntop.Pilot.Pesistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230414063014_CleanDB")]
+    [Migration("20230415004209_CleanDB")]
     partial class CleanDB
     {
         /// <inheritdoc />
@@ -24,6 +24,20 @@ namespace Syntop.Pilot.Pesistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("Syntop.Pilot.Domain.Demo.City", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CityName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cities");
+                });
 
             modelBuilder.Entity("Syntop.Pilot.Domain.Demo.WeatherForecast", b =>
                 {

@@ -22,6 +22,20 @@ namespace Syntop.Pilot.Pesistence.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Syntop.Pilot.Domain.Demo.City", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CityName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cities");
+                });
+
             modelBuilder.Entity("Syntop.Pilot.Domain.Demo.WeatherForecast", b =>
                 {
                     b.Property<Guid>("Id")

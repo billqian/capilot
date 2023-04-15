@@ -12,6 +12,18 @@ namespace Syntop.Pilot.Pesistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Cities",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CityName = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "WeatherForecasts",
                 columns: table => new
                 {
@@ -29,6 +41,9 @@ namespace Syntop.Pilot.Pesistence.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Cities");
+
             migrationBuilder.DropTable(
                 name: "WeatherForecasts");
         }

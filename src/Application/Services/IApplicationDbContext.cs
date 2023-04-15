@@ -12,10 +12,10 @@ namespace Syntop.Pilot.Application.Services;
 
 public interface IApplicationDbContext
 {
-    IUnitOfWork UnitOfWork { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
     DatabaseFacade Database { get; }
 
     DbSet<WeatherForecast> WeatherForecasts { get; }
+    DbSet<City> Cities { get; }
 }

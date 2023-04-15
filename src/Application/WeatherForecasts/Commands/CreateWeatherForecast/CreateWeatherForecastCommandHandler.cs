@@ -19,6 +19,10 @@ internal class CreateWeatherForecastCommandHandler : IRequestHandler<CreateWeath
     {
         var forecastItem = _mapper.Map<WeatherForecast>(request);
 
+        forecastItem.AddDomainEvent(
+            new WeatherForecastCreatedEvent() { 
+                Target = forecastItem 
+            });
         await _context.WeatherForecasts.AddAsync(forecastItem);
 
         await _context.SaveChangesAsync(cancellationToken);
