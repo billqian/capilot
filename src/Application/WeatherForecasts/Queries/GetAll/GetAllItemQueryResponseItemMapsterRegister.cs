@@ -1,5 +1,5 @@
 ﻿using Mapster;
-using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
+using Syntop.Pilot.Dto.WeatherForecasts;
 using Syntop.Pilot.Domain.Demo;
 using System;
 using System.Collections.Generic;

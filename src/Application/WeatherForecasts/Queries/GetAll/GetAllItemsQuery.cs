@@ -1,4 +1,4 @@
-﻿using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
+﻿using Syntop.Pilot.Dto.WeatherForecasts;
 
 namespace Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
 

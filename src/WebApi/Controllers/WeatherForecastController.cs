@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
+using Syntop.Pilot.Dto.WeatherForecasts;
 using Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
 using Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
 using Syntop.Pilot.Domain.Demo;

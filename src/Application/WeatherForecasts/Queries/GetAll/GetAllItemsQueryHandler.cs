@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
-using Syntop.Pilot.Application.RequestModels.WeatherForecasts;
+using Syntop.Pilot.Dto.WeatherForecasts;
 using Syntop.Pilot.Application.Services;
 using Syntop.Pilot.Domain.Demo;
 

@@ -4,8 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <AssemblyName>Syntop.Pilot.Application.RequestModels</AssemblyName>
-	  <RootNamespace>Syntop.Pilot.Application</RootNamespace>
+	  <AssemblyName>Syntop.Pilot.Dto</AssemblyName>
+	  <RootNamespace>Syntop.Pilot.Dto</RootNamespace>
   </PropertyGroup>
 
 </Project>
