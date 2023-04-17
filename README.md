@@ -4,7 +4,7 @@
 
 ### src
 * Domain
-* Application.RequestModel: dto objects, reuse this project between server and client projects
+* Application.RequestModel(Dto): dto objects, reuse this project between server and client projects
 * Application
 * Persistence: database related
 * Infrastructure
