@@ -10,9 +10,14 @@ public static class DependencyInjectionExtension
         this IServiceCollection services, 
         IConfiguration config)
     {
+        //services.AddDbContext<ApplicationDbContext>(options =>
+        //        options.UseNpgsql(config.GetConnectionString("DefaultConnection"),
+        //        builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
         services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(config.GetConnectionString("DefaultConnection"),
+                options.UseSqlite(config.GetConnectionString("LocalConnection"),
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
 
         services.AddScoped<IApplicationDbContext>(
             sp => sp.GetRequiredService<ApplicationDbContext>());

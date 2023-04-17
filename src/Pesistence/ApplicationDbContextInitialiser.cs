@@ -20,7 +20,7 @@ public class ApplicationDbContextInitialiser
     public async Task InitialiseAsync()
     {
         try {
-            if (_context.Database.IsNpgsql()) {
+            if (_context.Database.IsNpgsql() || _context.Database.IsSqlite()) {
                 await _context.Database.MigrateAsync();
             }
         } catch (Exception ex) {
