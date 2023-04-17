@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Logging.Debug;
+using Microsoft.Extensions.Options;
 using Syntop.Pilot.Domain.Demo;
 using System.Reflection;
 using System.Transactions;
@@ -8,6 +9,9 @@ namespace Syntop.Pilot.Pesistence;
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     private readonly IPublisher _publisher;
+    private static readonly LoggerFactory _loggerFactory
+        = new LoggerFactory(new[] { new DebugLoggerProvider() });
+
 
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
@@ -30,6 +34,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.UseLoggerFactory(_loggerFactory);
         //optionsBuilder.AddInterceptors(_auditableEntitySaveChangesInterceptor);
     }
 
