@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Syntop.Pilot.Dto.WeatherForecasts;
 
-public class CreateWeatherForecastCommandData
+public class CreateWeatherForecastRequest
 {
     public DateOnly Date { get; set; }
     public int TemperatureC { get; set; }

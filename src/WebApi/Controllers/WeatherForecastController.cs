@@ -9,7 +9,7 @@ namespace Syntop.Pilot.WebApi.Controllers;
 public class WeatherForecastController : ApiControllerBase
 {
     [HttpGet]
-    public async Task<GetAllItemQueryResponse> Get()
+    public async Task<GetAllItemsResponse> Get()
     {
         return await Sender.Send(new GetAllItemsQuery());
     }

@@ -38,11 +38,11 @@ else
 }
 
 @code {
-    private IEnumerable<GetAllItemQueryResponseItem>? forecasts;
+    private IEnumerable<GetAllItemsResponseItem>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        var data = await Http.GetFromJsonAsync<GetAllItemQueryResponse>("api/WeatherForecast");
+        var data = await Http.GetFromJsonAsync<GetAllItemsResponse>("api/WeatherForecast");
         forecasts = data!.Items;
     }
 

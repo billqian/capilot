@@ -3,6 +3,6 @@
 namespace Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
 
 public class CreateWeatherForecastCommand
-    : CreateWeatherForecastCommandData,
+    : CreateWeatherForecastRequest,
     IRequest<Guid>
 { }

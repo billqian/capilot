@@ -13,3 +13,21 @@
 
 ### test
 todo:
+
+### Naming Rules:
+
+### DTO objects:
+	end with: Request, Response
+	for example: CreateUserRequest, GetUserDetailResponse
+
+### Command and Query
+	end with: Command, Query
+	for example: CreateUserCommand, GetUserDetailQuery, GetUserListQuery
+	CreateUserCommandHandler: handler
+	CreateUserCommandValidator: validation
+	CreaterUserMapper: Mapster Register
+
+### Event Handler
+	to do:
+	
+

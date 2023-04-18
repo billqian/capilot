@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Syntop.Pilot.Dto.WeatherForecasts;
 
-public record GetAllItemQueryResponse(int TotalCount, IEnumerable<GetAllItemQueryResponseItem> Items);
+public record GetAllItemsResponse(int TotalCount, IEnumerable<GetAllItemsResponseItem> Items);
 
-public class GetAllItemQueryResponseItem
+public class GetAllItemsResponseItem
 {
     public DateOnly Date { get; set; }
     public int Temperature { get; set; }

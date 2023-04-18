@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
 
-internal class CreateWeatherForecastCommandMapsterRegister : IRegister
+internal class CreateWeatherForecastCommandMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {

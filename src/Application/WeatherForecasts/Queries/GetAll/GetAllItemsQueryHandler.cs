@@ -6,7 +6,7 @@ using Syntop.Pilot.Domain.Demo;
 
 namespace Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
 
-internal class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, GetAllItemQueryResponse>
+internal class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, GetAllItemsResponse>
 {
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
@@ -16,15 +16,15 @@ internal class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, GetAl
         _context = context;
         _mapper = mapper;
     }
-    public Task<GetAllItemQueryResponse> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
+    public Task<GetAllItemsResponse> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
     {
         var items =
         _context.WeatherForecasts
         .AsNoTracking()
         .OrderBy(x => x.Date)
-        .ProjectToType<GetAllItemQueryResponseItem>(_mapper.Config)
+        .ProjectToType<GetAllItemsResponseItem>(_mapper.Config)
         .AsEnumerable();
-        return Task.FromResult(new GetAllItemQueryResponse(
+        return Task.FromResult(new GetAllItemsResponse(
             TotalCount: items.Count(),
             Items: items
         ));
