@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Syntop.Pilot.Dto.WeatherForecasts;
 
-public record CreateWeatherForecastCommandData(DateOnly Date,
-    int TemperatureC,
-    string? Summary = "");
+public class CreateWeatherForecastCommandData
+{
+    public DateOnly Date { get; set; }
+    public int TemperatureC { get; set; }
+
+    public string? Summary { get; set; }
+}
