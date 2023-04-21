@@ -1,4 +1,4 @@
-# an asp.net core project for demonstrate the Clean Architecture building.
+# an asp.net core project to demonstrate the Clean Architecture building.
 
 ## Layer/project Description:
 
