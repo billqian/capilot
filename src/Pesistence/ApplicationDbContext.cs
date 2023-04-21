@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging.Debug;
 using Microsoft.Extensions.Options;
 using Syntop.Pilot.Domain.Demo;
+using Syntop.Pilot.Pesistence.Interceptors;
 using System.Reflection;
 using System.Transactions;
 
@@ -9,16 +10,19 @@ namespace Syntop.Pilot.Pesistence;
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     private readonly IPublisher _publisher;
+    private DemoSaveChangesInterceptor _saveInteceptor;
     private static readonly LoggerFactory _loggerFactory
         = new LoggerFactory(new[] { new DebugLoggerProvider() });
 
 
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
-        IPublisher publisher)
+        IPublisher publisher,
+        DemoSaveChangesInterceptor demoSaveChangesInterceptor)
         : base(options)
     {
         _publisher = publisher;
+        _saveInteceptor = demoSaveChangesInterceptor;
     }
         
     public DbSet<WeatherForecast> WeatherForecasts => Set<WeatherForecast>();
@@ -35,7 +39,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseLoggerFactory(_loggerFactory);
-        //optionsBuilder.AddInterceptors(_auditableEntitySaveChangesInterceptor);
+        optionsBuilder.AddInterceptors(_saveInteceptor);
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
