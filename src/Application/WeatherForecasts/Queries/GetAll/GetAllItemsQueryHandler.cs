@@ -19,7 +19,7 @@ internal class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, GetAl
     public Task<GetAllItemsResponse> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
     {
         var items =
-        _context.WeatherForecasts
+        _context.WeatherForecast
         .AsNoTracking()
         .OrderBy(x => x.Date)
         .ProjectToType<GetAllItemsResponseItem>(_mapper.Config)

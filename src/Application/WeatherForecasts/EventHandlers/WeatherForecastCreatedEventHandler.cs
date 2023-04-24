@@ -20,8 +20,8 @@ internal class WeatherForecastCreatedEventHandler
     {
         var targetItem = notification.Target;
         if (targetItem != null 
-            && !_context.Cities.Any(item => item.CityName == targetItem.Summary)) {
-            await _context.Cities.AddAsync(new City() { 
+            && !_context.City.Any(item => item.CityName == targetItem.Summary)) {
+            await _context.City.AddAsync(new City() { 
                 CityName = targetItem.Summary
             });
 

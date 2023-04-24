@@ -16,6 +16,6 @@ public interface IApplicationDbContext
 
     DatabaseFacade Database { get; }
 
-    DbSet<WeatherForecast> WeatherForecasts { get; }
-    DbSet<City> Cities { get; }
+    DbSet<WeatherForecast> WeatherForecast { get; }
+    DbSet<City> City { get; }
 }

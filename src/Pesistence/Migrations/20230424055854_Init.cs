@@ -6,35 +6,35 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Syntop.Pilot.Pesistence.Migrations
 {
     /// <inheritdoc />
-    public partial class CleanDB : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Cities",
+                name: "city",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CityName = table.Column<string>(type: "text", nullable: true)
+                    id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    city_name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cities", x => x.Id);
+                    table.PrimaryKey("pk_city", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "WeatherForecasts",
+                name: "weather_forecast",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: false),
-                    TemperatureC = table.Column<int>(type: "integer", nullable: false),
-                    Summary = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true)
+                    id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    date = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    temperature_c = table.Column<int>(type: "INTEGER", nullable: false),
+                    summary = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WeatherForecasts", x => x.Id);
+                    table.PrimaryKey("pk_weather_forecast", x => x.id);
                 });
         }
 
@@ -42,10 +42,10 @@ namespace Syntop.Pilot.Pesistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Cities");
+                name: "city");
 
             migrationBuilder.DropTable(
-                name: "WeatherForecasts");
+                name: "weather_forecast");
         }
     }
 }

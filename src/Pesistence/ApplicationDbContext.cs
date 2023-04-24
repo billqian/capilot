@@ -25,9 +25,9 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         _saveInteceptor = demoSaveChangesInterceptor;
     }
         
-    public DbSet<WeatherForecast> WeatherForecasts => Set<WeatherForecast>();
+    public DbSet<WeatherForecast> WeatherForecast => Set<WeatherForecast>();
 
-    public DbSet<City> Cities => Set<City>();
+    public DbSet<City> City => Set<City>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -40,6 +40,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         optionsBuilder.UseLoggerFactory(_loggerFactory);
         optionsBuilder.AddInterceptors(_saveInteceptor);
+        optionsBuilder.UseSnakeCaseNamingConvention();
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

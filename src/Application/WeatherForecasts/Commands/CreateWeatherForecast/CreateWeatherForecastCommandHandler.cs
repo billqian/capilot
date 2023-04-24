@@ -23,7 +23,7 @@ internal class CreateWeatherForecastCommandHandler : IRequestHandler<CreateWeath
             new WeatherForecastCreatedEvent() { 
                 Target = forecastItem 
             });
-        await _context.WeatherForecasts.AddAsync(forecastItem);
+        await _context.WeatherForecast.AddAsync(forecastItem);
 
         await _context.SaveChangesAsync(cancellationToken);
 

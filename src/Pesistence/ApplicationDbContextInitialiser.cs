@@ -41,9 +41,9 @@ public class ApplicationDbContextInitialiser
 
     public async Task TrySeedAsync()
     {
-        if (!_context.WeatherForecasts.Any()) {
+        if (!_context.WeatherForecast.Any()) {
 
-            await _context.WeatherForecasts.AddRangeAsync(
+            await _context.WeatherForecast.AddRangeAsync(
                 new WeatherForecast() {
                     Date = DateOnly.FromDateTime(DateTime.Now),
                     Summary = "Tokyo", TemperatureC = 25
