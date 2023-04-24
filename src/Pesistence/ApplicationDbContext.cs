@@ -39,6 +39,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseLoggerFactory(_loggerFactory);
+        optionsBuilder.UseLazyLoadingProxies();
         optionsBuilder.AddInterceptors(_saveInteceptor);
         optionsBuilder.UseSnakeCaseNamingConvention();
     }
