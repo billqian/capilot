@@ -8,4 +8,8 @@
 	  <RootNamespace>Syntop.Pilot.Dto</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+  </ItemGroup>
+
 </Project>

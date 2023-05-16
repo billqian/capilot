@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using Syntop.Pilot.Application.WeatherForecasts.Queries.GetAll;
 using Syntop.Pilot.Domain.Demo;
+using Syntop.Pilot.Dto.WeatherForecasts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ internal class CreateWeatherForecastCommandMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
-        config.ForType<CreateWeatherForecastCommand, WeatherForecast>()
+        config.ForType<CreateWeatherForecastRequest, WeatherForecast>()
             ;
     }
 }

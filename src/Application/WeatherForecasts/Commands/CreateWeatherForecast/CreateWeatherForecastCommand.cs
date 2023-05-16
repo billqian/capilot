@@ -2,7 +2,5 @@
 
 namespace Syntop.Pilot.Application.WeatherForecasts.Commands.CreateWeatherForecast;
 
-public class CreateWeatherForecastCommand
-    : CreateWeatherForecastRequest,
-    IRequest<Guid>
-{ }
+public record CreateWeatherForecastCommand(CreateWeatherForecastRequest Item) 
+    : IRequest<Guid>;

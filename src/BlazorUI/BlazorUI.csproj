@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.RequestModels\Dto.csproj" />
+    <ProjectReference Include="..\Application.RequestModels\Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,7 +17,7 @@ internal class CreateWeatherForecastCommandHandler : IRequestHandler<CreateWeath
 
     public async Task<Guid> Handle(CreateWeatherForecastCommand request, CancellationToken cancellationToken)
     {
-        var forecastItem = _mapper.Map<WeatherForecast>(request);
+        var forecastItem = _mapper.Map<WeatherForecast>(request.Item);
 
         forecastItem.AddDomainEvent(
             new WeatherForecastCreatedEvent() { 
