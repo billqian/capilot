@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="WeatherForecasts\Commands\CreateWeatherForecast\CreateWeatherForecastCommand.cs" />
     <Compile Remove="WeatherForecasts\Commands\CreateWeatherForecast\CreateWeatherForecastCommandValidator.cs" />
+    <Compile Remove="WeatherForecasts\Queries\GetAll\GetAllItemsQuery.cs" />
   </ItemGroup>
 
   <ItemGroup>
